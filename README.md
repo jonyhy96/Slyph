@@ -9,3 +9,8 @@ This system include method to operate POD[create,delete and check],Deployment[cr
 Statefulset[create,delete and check],PV[create,delete and check]
 
 Welcome any feedback and happy learning kubernetes!
+
+#Useage
+```
+  docker run -d -v /usr/local/bin:/usr/local/bin -p 8888:8888 slyph
+```

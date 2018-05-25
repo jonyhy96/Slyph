@@ -10,7 +10,7 @@ Statefulset[create,delete and check],PV[create,delete and check]
 
 Welcome any feedback and happy learning kubernetes!
 
-#Useage
+# Useage
 ```
   docker run -d -v /usr/local/bin:/usr/local/bin -p 8888:8888 slyph
 ```

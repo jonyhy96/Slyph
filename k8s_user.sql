@@ -1,0 +1,1 @@
+INSERT INTO k8s.user (id, name, password) VALUES (1, 'root', 'password');

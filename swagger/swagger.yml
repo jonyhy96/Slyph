@@ -1,0 +1,816 @@
+swagger: "2.0"
+info:
+  title: Slyph 基于Docker的应用负载均衡优化API
+  description: 接口包含POD,Service,Deployment的创建删除和查看
+  version: 1.0.0
+  termsOfService: haoyun@ghostcloud.cn
+  contact:
+    email: haoyun@ghostcloud.cn
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /auto/down:
+    get:
+      tags:
+      - auto
+      description: Get to login system
+      operationId: AutoDownController.Get to Down
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+    post:
+      tags:
+      - auto
+      description: Post to login system
+      operationId: AutoDownController.Post to Down
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /auto/up:
+    get:
+      tags:
+      - auto
+      description: Get to up
+      operationId: AutoBuildController.Get to Build
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+    post:
+      tags:
+      - auto
+      description: Post to up
+      operationId: AutoBuildController.Post to Build
+      parameters:
+      - in: formData
+        name: compose.yaml
+        description: docker-compose.yaml
+        schema:
+          $ref: '#/definitions/.true'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /deployment/create:
+    get:
+      tags:
+      - deployment
+    post:
+      tags:
+      - deployment
+      description: Create a deployment
+      operationId: CreateDeployment.Create a deployment
+      parameters:
+      - in: body
+        name: deployment
+        description: "true"
+        schema:
+          $ref: '#/definitions/models.Deployment'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /deployment/delete:
+    post:
+      tags:
+      - deployment
+      description: Delete a deployment
+      operationId: DeleteDeployment.Delete a deployment
+      parameters:
+      - in: body
+        name: deployment
+        description: "true"
+        schema:
+          $ref: '#/definitions/models.Delete'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /deployment/getinfo:
+    get:
+      tags:
+      - deployment
+  /deployment/getjson:
+    get:
+      tags:
+      - deployment
+      description: get deployments information
+      operationId: GetDeployment.get deployments information
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.DeploymentList'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /deployment/rollback:
+    post:
+      tags:
+      - deployment
+      description: rollback deployments
+      operationId: RollBackDeployment.rollback deployments
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /deployment/update:
+    get:
+      tags:
+      - deployment
+    post:
+      tags:
+      - deployment
+      description: update deployments
+      operationId: UpdateDeployment.update deployments
+      parameters:
+      - in: body
+        name: deployment
+        description: "true"
+        schema:
+          $ref: '#/definitions/models.Deployment'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /getlog/:
+    get:
+      tags:
+      - getlog
+  /getlog/log:
+    get:
+      tags:
+      - getlog
+      description: Get a pods info
+      operationId: LogController.Get a podinfo
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Log'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /index/:
+    get:
+      tags:
+      - index
+  /pod/create:
+    get:
+      tags:
+      - pod
+    post:
+      tags:
+      - pod
+      description: Get 1 job's detail info
+      operationId: CreatePod.Create a pod
+      parameters:
+      - in: body
+        name: pod
+        description: "true"
+        schema:
+          $ref: '#/definitions/models.Pod'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /pod/delete:
+    post:
+      tags:
+      - pod
+      description: Delete a pod
+      operationId: DeletePod.Delete a pod
+      parameters:
+      - in: body
+        name: pod
+        description: "true"
+        schema:
+          $ref: '#/definitions/models.Delete'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /pod/getinfo:
+    get:
+      tags:
+      - pod
+  /pod/getjson:
+    get:
+      tags:
+      - pod
+      description: Get a pods info
+      operationId: GetPod.Get a podinfo
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.PodList'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /service/create:
+    get:
+      tags:
+      - service
+    post:
+      tags:
+      - service
+      description: Create a Service
+      operationId: CreateService.Create a Service
+      parameters:
+      - in: body
+        name: service
+        description: "true"
+        schema:
+          $ref: '#/definitions/models.Service'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: 连接超时
+        "500":
+          description: 内部服务器错误
+  /service/delete:
+    post:
+      tags:
+      - service
+      description: Delete a Service
+      operationId: DeleteService.Delete a Service
+      parameters:
+      - in: body
+        name: service
+        description: "true"
+        schema:
+          $ref: '#/definitions/models.Delete'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /service/getinfo:
+    get:
+      tags:
+      - service
+  /service/getjson:
+    get:
+      tags:
+      - service
+      description: Get Service information
+      operationId: GetService.Get Services information
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /st/create:
+    get:
+      tags:
+      - st
+    post:
+      tags:
+      - st
+      description: Get 1 statefulset's detail info
+      operationId: CreateStatefulset.Create a statefulset
+      parameters:
+      - in: body
+        name: statefulset
+        description: "true"
+        schema:
+          $ref: '#/definitions/models.Statefulset'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /st/delete:
+    post:
+      tags:
+      - st
+      description: Delete a statefulset
+      operationId: DeleteStatefulset.Delete a statefulset
+      parameters:
+      - in: body
+        name: statefulset
+        description: "true"
+        schema:
+          $ref: '#/definitions/models.Delete'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /st/getinfo:
+    get:
+      tags:
+      - st
+  /st/getjson:
+    get:
+      tags:
+      - st
+      description: Get a statefulsets info
+      operationId: GetStatefulset.Get a statefulset info
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/.StatefulSetList{}'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /sto/create:
+    get:
+      tags:
+      - sto
+    post:
+      tags:
+      - sto
+      description: Get 1 job's detail info
+      operationId: AddStorage.Create a PV
+      parameters:
+      - in: body
+        name: PV
+        description: "true"
+        schema:
+          $ref: '#/definitions/models.PV'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /sto/delete:
+    post:
+      tags:
+      - sto
+      description: Delete a PV
+      operationId: DeleteStorage.Delete a PV
+      parameters:
+      - in: body
+        name: PV
+        description: "true"
+        schema:
+          $ref: '#/definitions/models.Delete'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /sto/getinfo:
+    get:
+      tags:
+      - sto
+  /sto/getjson:
+    get:
+      tags:
+      - sto
+      description: Get a PV info
+      operationId: GetStorage.Get a PVinfo
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/.PV{}'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+  /user/login:
+    get:
+      tags:
+      - user
+    post:
+      tags:
+      - user
+      description: Post to login system
+      operationId: LoginController.Post to login system
+      parameters:
+      - in: query
+        name: username
+        description: "true"
+        type: string
+      - in: query
+        name: password
+        description: "true"
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: '"连接超时"'
+        "500":
+          description: '"内部服务器错误"'
+definitions:
+  .Int:
+    type: object
+  .PV{}:
+    type: object
+  .StatefulSetList{}:
+    type: object
+  .true:
+    type: object
+  inf.Dec:
+    title: Dec
+    type: object
+    properties:
+      scale:
+        $ref: '#/definitions/inf.Scale'
+      unscaled:
+        $ref: '#/definitions/big.Int'
+  inf.Scale:
+    type: object
+  models.Container:
+    title: Container
+    type: object
+    properties:
+      containerPort:
+        type: integer
+        format: int32
+      env:
+        type: array
+        items:
+          $ref: '#/definitions/v1.EnvVar'
+      image:
+        type: string
+      name:
+        type: string
+      protocol:
+        type: string
+  models.Delete:
+    title: Delete
+    type: object
+    properties:
+      name:
+        type: string
+      namespace:
+        type: string
+  models.Deployment:
+    title: Deployment
+    type: object
+    properties:
+      containers:
+        type: array
+        items:
+          $ref: '#/definitions/models.Container'
+      desc:
+        type: string
+      labels:
+        additionalProperties:
+          type: string
+      name:
+        type: string
+      namespace:
+        type: string
+      replicas:
+        type: integer
+        format: int32
+  models.DeploymentList:
+    title: DeploymentList
+    type: object
+    properties:
+      items:
+        type: array
+        items:
+          $ref: '#/definitions/models.Deployment'
+      metadata:
+        $ref: '#/definitions/models.ListMeta'
+      typeMeta:
+        $ref: '#/definitions/models.TypeMeta'
+  models.ListMeta:
+    title: ListMeta
+    type: object
+    properties:
+      continue:
+        type: string
+      resourceVersion:
+        type: string
+      selfLink:
+        type: string
+  models.Log:
+    title: Log
+    type: object
+    properties:
+      etype:
+        type: string
+      event:
+        type: string
+      time:
+        type: string
+  models.PV:
+    title: PV
+    type: object
+    properties:
+      accessModes:
+        type: string
+      name:
+        type: string
+      nfspath:
+        type: string
+      nfsserver:
+        type: string
+      storageName:
+        type: string
+      storageQuantity:
+        type: string
+  models.Pod:
+    title: Pod
+    type: object
+    properties:
+      containers:
+        type: array
+        items:
+          $ref: '#/definitions/models.Container'
+      desc:
+        type: string
+      name:
+        type: string
+      namespace:
+        type: string
+  models.PodList:
+    title: PodList
+    type: object
+    properties:
+      items:
+        type: array
+        items:
+          $ref: '#/definitions/models.Pod'
+      metadata:
+        $ref: '#/definitions/models.ListMeta'
+      typeMeta:
+        $ref: '#/definitions/models.TypeMeta'
+  models.Port:
+    title: Port
+    type: object
+    properties:
+      containerPort:
+        type: integer
+        format: int64
+      nodePort:
+        type: integer
+        format: int32
+      protocol:
+        type: string
+      servicePort:
+        type: integer
+        format: int32
+  models.Response:
+    title: Response
+    type: object
+    properties:
+      action:
+        type: string
+      status:
+        type: string
+  models.Service:
+    title: Service
+    type: object
+    properties:
+      name:
+        type: string
+      namespace:
+        type: string
+      ports:
+        type: array
+        items:
+          $ref: '#/definitions/models.Port'
+      selector:
+        additionalProperties:
+          type: string
+      type:
+        $ref: '#/definitions/v1.ServiceType'
+  models.Statefulset:
+    title: Statefulset
+    type: object
+    properties:
+      accessModes:
+        type: string
+      containers:
+        type: array
+        items:
+          $ref: '#/definitions/models.Container'
+      mountpath:
+        type: string
+      name:
+        type: string
+      namespace:
+        type: string
+      replicas:
+        type: integer
+        format: int32
+      requests:
+        type: string
+      storageName:
+        type: string
+      vmname:
+        type: string
+  models.TypeMeta:
+    title: TypeMeta
+    type: object
+    properties:
+      apiVersion:
+        type: string
+      kind:
+        type: string
+  resource.Format:
+    type: object
+  resource.Quantity:
+    title: Quantity
+    type: object
+    properties:
+      d:
+        $ref: '#/definitions/resource.infDecAmount'
+      i:
+        $ref: '#/definitions/resource.int64Amount'
+      s:
+        type: string
+  resource.Scale:
+    type: object
+  resource.infDecAmount:
+    title: infDecAmount
+    type: object
+  resource.int64Amount:
+    title: int64Amount
+    type: object
+    properties:
+      scale:
+        $ref: '#/definitions/resource.Scale'
+      value:
+        type: integer
+        format: int64
+  v1.ConfigMapKeySelector:
+    title: LocalObjectReference
+    type: object
+    properties:
+      key:
+        type: string
+      name:
+        type: string
+      optional:
+        type: boolean
+  v1.EnvVar:
+    title: EnvVar
+    type: object
+    properties:
+      name:
+        type: string
+      value:
+        type: string
+      valueFrom:
+        $ref: '#/definitions/v1.EnvVarSource'
+  v1.EnvVarSource:
+    title: EnvVarSource
+    type: object
+    properties:
+      configMapKeyRef:
+        $ref: '#/definitions/v1.ConfigMapKeySelector'
+      fieldRef:
+        $ref: '#/definitions/v1.ObjectFieldSelector'
+      resourceFieldRef:
+        $ref: '#/definitions/v1.ResourceFieldSelector'
+      secretKeyRef:
+        $ref: '#/definitions/v1.SecretKeySelector'
+  v1.LocalObjectReference:
+    title: LocalObjectReference
+    type: object
+    properties:
+      name:
+        type: string
+  v1.ObjectFieldSelector:
+    title: ObjectFieldSelector
+    type: object
+    properties:
+      apiVersion:
+        type: string
+      fieldPath:
+        type: string
+  v1.ResourceFieldSelector:
+    title: ResourceFieldSelector
+    type: object
+    properties:
+      containerName:
+        type: string
+      divisor:
+        $ref: '#/definitions/resource.Quantity'
+      resource:
+        type: string
+  v1.SecretKeySelector:
+    title: LocalObjectReference
+    type: object
+    properties:
+      key:
+        type: string
+      name:
+        type: string
+      optional:
+        type: boolean
+  v1.ServiceType:
+    type: object
+tags:
+- name: index
+  description: |
+    IndexController struct
+- name: user
+  description: |
+    LoginController struct
+- name: auto
+  description: |
+    AutoDownController struct
+- name: pod
+  description: |
+    DeletePod struct
+- name: service
+  description: |
+    DeleteService struct
+- name: st
+  description: |
+    DeleteStatefulset struct
+- name: sto
+  description: |
+    DeleteStorage struct
+- name: deployment
+  description: |
+    RollBackDeployment struct

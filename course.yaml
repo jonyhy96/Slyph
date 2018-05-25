@@ -1,0 +1,24 @@
+version: "3"
+services:
+
+  course:
+   image: registry.docker-cn.com/jonyhy/course
+   ports:
+    - "8089:8089"
+   deploy:
+    replicas: 1
+    restart_policy:
+      condition: any
+   depends_on:
+     - 'coursesql'
+   environment:
+     - MYSQL_HOST=jdbc:mysql://coursesql:3306/select_course?characterEncoding=utf-8
+   labels:
+    kompose.service.type: NodePort
+
+  coursesql:
+   image: registry.docker-cn.com/jonyhy/coursesql
+   ports:
+    - "3306:3306"
+   labels:
+    kompose.service.type: NodePort

@@ -1,0 +1,52 @@
+&Deployment{
+    ObjectMeta:k8s_io_apimachinery_pkg_apis_meta_v1.ObjectMeta{
+        Name:test,
+        GenerateName:,
+        Namespace:,
+        SelfLink:,
+        UID:,
+        ResourceVersion:,
+        Generation:0,
+        CreationTimestamp:0001-01-01 00:00:00 +0000 UTC,
+        DeletionTimestamp:<nil>,
+        DeletionGracePeriodSeconds:nil,
+        Labels:map[string]string{
+            name: test,},
+            Annotations:map[string]string{},
+            OwnerReferences:[],
+            Finalizers:[],
+            ClusterName:,
+            Initializers:nil,},
+            Spec:DeploymentSpec{
+                Replicas:*3,
+                Selector:nil,
+                Template:k8s_io_api_core_v1.PodTemplateSpec{
+                    ObjectMeta:k8s_io_apimachinery_pkg_apis_meta_v1.ObjectMeta{
+                        Name:,GenerateName:,
+                        Namespace:,SelfLink:,
+                        UID:,ResourceVersion:,
+                        Generation:0,
+                        CreationTimestamp:0001-01-01 00:00:00 +0000 UTC,
+                        DeletionTimestamp:<nil>,
+                        DeletionGracePeriodSeconds:nil,
+                        Labels:map[string]string{
+                            name: test,},
+                            Annotations:map[string]string{},
+                            OwnerReferences:[],
+                            Finalizers:[],
+                            ClusterName:,
+                            Initializers:nil,},
+                            Spec:PodSpec{
+                                Volumes:[],
+                                Containers:
+                                [{
+                                    test 
+                                    mysql:5.6.20 
+                                    [] 
+                                    []  
+                                    [{ 0 3306  }] 
+                                    [] 
+                                    [] 
+                                    {
+                                        map[cpu:{{2000}
+ {<nil>} 200 DecimalSI} memory:{{1073741824 0} {<nil>} 1Gi BinarySI}] map[cpu:{{2000 -3} {<nil>}  DecimalSI} memory:{{1073741824 0} {<nil>} 1Gi BinarySI}]} [] [] nil nil nil    nil false false false}],RestartPolicy:,TerminationGracePeriodSeconds:nil,ActiveDeadlineSeconds:nil,DNSPolicy:,NodeSelector:map[string]string{},ServiceAccountName:,DeprecatedServiceAccount:,NodeName:,HostNetwork:false,HostPID:false,HostIPC:false,SecurityContext:nil,ImagePullSecrets:[],Hostname:,Subdomain:,Affinity:nil,SchedulerName:,InitContainers:[],AutomountServiceAccountToken:nil,Tolerations:[],HostAliases:[],PriorityClassName:,Priority:nil,DNSConfig:nil,ShareProcessNamespace:nil,},},Strategy:DeploymentStrategy{Type:,RollingUpdate:nil,},MinReadySeconds:0,RevisionHistoryLimit:nil,Paused:false,RollbackTo:nil,ProgressDeadlineSeconds:nil,},Status:DeploymentStatus{ObservedGeneration:0,Replicas:0,UpdatedReplicas:0,AvailableReplicas:0,UnavailableReplicas:0,Conditions:[],ReadyReplicas:0,CollisionCount:nil,},}

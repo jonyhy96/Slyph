@@ -1,0 +1,238 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Sylph</title>
+  <meta name="description" content="这是一个 Sylph 后台管理界面">
+  <meta name="keywords" content="help">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+<header class="am-topbar am-topbar-inverse admin-header">
+  <div class="am-topbar-brand">
+    <strong>Sylph</strong> <small>后台管理</small>
+  </div>
+
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+  <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+    <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+      <li class="am-dropdown" data-am-dropdown>
+        <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+          <span class="am-icon-users"></span> 管理员 <span class="am-icon-caret-down"></span>
+        </a>
+        <ul class="am-dropdown-content">
+          <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
+          <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+          <li><a href="/v1/user/login"><span class="am-icon-power-off"></span> 退出</a></li>
+        </ul>
+      </li>
+      <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="am-cf admin-main">
+  <!-- sidebar start -->
+  <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
+    <div class="am-offcanvas-bar admin-offcanvas-bar">
+      <ul class="am-list admin-sidebar-list">
+         <li class="admin-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}"><span></span>POD<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub" id="collapse-nav">
+            <li><a href="/v1/pod/getinfo" class="am-cf"><span></span>查看POD</a></li>
+            <li><a href="/v1/pod/create"><span></span>创建POD</a></li>
+          </ul>
+        </li>
+        <li class="deployment-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-deployment'}"><span></span>Deployment<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub" id="collapse-deployment">
+            <li><a href="/v1/deployment/getinfo" class="am-cf"><span></span>查看Deployment</a></li>
+            <li><a href="/v1/deployment/create"><span></span>创建Deployment</a></li>
+            <li><a href="/v1/deployment/update"><span></span>滚动更新</a></li>
+          </ul>
+        </li>
+        <li class="service-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-Service'}"><span></span>Service<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub " id="collapse-Service">
+            <li><a href="/v1/service/getinfo" class="am-cf"><span></span>查看Service</a></li>
+            <li><a href="/v1/service/create"><span></span>创建Service</a></li>
+          </ul>
+        </li>
+        <li class="autocompose-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-autocompose'}"><span></span>Autocompose<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub " id="collapse-autocompose">
+            <li><a href="/v1/auto/up" class="am-cf"><span></span>UP&Down</a></li>
+            <li><a href="/v1/auto/down"><span></span>Watch</a></li>
+          </ul>
+        </li>
+        <li class="st-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-st'}"><span></span>有状态服务<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-st">
+            <li><a href="/v1/st/getinfo" class="am-cf"><span></span>查看服务</a></li>
+            <li><a href="/v1/st/create" class="am-cf"><span></span>创建服务</a></li>
+          </ul>
+        </li>
+        <li class="sto-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-sto'}"><span></span>存储管理<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub " id="collapse-sto">
+            <li><a href="/v1/sto/getinfo" class="am-cf"><span></span>查看PV</a></li>
+            <li><a href="/v1/sto/create" class="am-cf"><span></span>创建PV</a></li>
+          </ul>
+        </li>
+        <li class="log-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-log'}"><span></span>日志<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub " id="collapse-log">
+            <li><a href="/v1/getlog" class="am-cf"><span></span>系统日志</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="am-panel am-panel-default admin-sidebar-panel">
+        <div class="am-panel-bd">
+          <p><span class="am-icon-tag"></span> wiki</p>
+          <p>Welcome to the Slyph</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- sidebar end -->
+
+  <!-- content start -->
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">首页</strong> / <small>Slyph运行信息</small></div>
+      </div>
+      <div class="am-g"  style="overflow-x:scroll;width:100%;white-space:nowrap;">
+        <div class="am-u-sm-12">
+          <table class="am-table am-table-bd am-table-striped admin-content-table">
+            <thead>
+            <tr>
+              <th></th>
+              <th>服务名</th>
+              <th>服务命名空间</th>
+              <th>副本期待值</th>
+              <th>当前副本数</th>
+              <th>容器名</th>
+              <th>镜像名</th>
+              <th>创建时间</th>
+              <th>operate</th>
+            </tr>
+            </thead>
+            <tbody id="stlist">
+           
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <footer class="admin-content-footer">
+      <hr>
+      <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+    </footer>
+  </div>
+  <!-- content end -->
+
+</div>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script>
+ // DelSt DelSt
+  function DelSt(name, namespace) {
+    var xmlhttp;
+    if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp = new XMLHttpRequest();
+    }
+    else {// code for IE6, IE5
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function () {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        loadPods();
+      }
+    }
+    xmlhttp.open("POST", "/v1/st/delete", true);
+    xmlhttp.send(JSON.stringify({
+    name:name,namespace:namespace
+  }));
+  alert("Statefulset "+name+" 已被删除");
+  document.location.reload();
+  }
+
+  //loadSt loadSt
+  function loadSt() {
+    var xmlhttp;
+    if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp = new XMLHttpRequest();
+    }
+    else {// code for IE6, IE5
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function () {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        var obj = JSON.parse(xmlhttp.responseText);
+        var htmltext = "<div>";
+        var items = obj.items;
+        for (var i = 0; i < items.length; i = i + 1) {
+          htmltext = htmltext +
+            '<tr>' +
+            '<td>' + '<img  height="40" width="60" src="static/st.png" alt=""/>' + '</td>' +
+            '<td>' +
+            '<a href=/v1/pod/getjson' + '>' + obj.items[i].metadata.name + '</a>' +
+            '</td>' +
+            '</td>' +
+            '<td>' + obj.items[i].metadata.namespace + '</td>' +
+            '<td>' + obj.items[i].spec.replicas + '</td>' +
+            '<td>' + obj.items[i].status.replicas + '</td>' +
+            '<td>' + obj.items[i].spec.template.spec.containers[0].name + '</td>' +
+            '<td>' + obj.items[i].spec.template.spec.containers[0].image + '</td>' +
+            '<td>' + obj.items[i].metadata.creationTimestamp + '</td>' +
+            '<td>' +
+            '<div class="am-btn-toolbar">' +
+            '<div class="am-btn-group am-btn-group-xs">' +
+            '<button class="am-btn am-btn-default am-btn-xs am-text-danger " ' +
+            'onclick=DelSt("' + items[i].metadata.name + '","' + items[i].metadata.namespace + '")>' +
+            '<span class="am-icon-trash-o"></span> 删除</button>' +
+            '</div>' +
+            '</div>' +
+            '</td>' +
+            '</tr>';
+
+        }
+        htmltext = htmltext + "</div>";
+        document.getElementById("stlist").innerHTML = htmltext;
+      }
+    }
+    xmlhttp.open("GET", "/v1/st/getjson", true);
+    xmlhttp.send();
+  }
+
+
+  document.body.onload = loadSt();
+</script>
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

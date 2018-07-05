@@ -20,5 +20,5 @@ createImage:
 
 .PHONY: clean	
 clean:
-    rm -f Slyph 
+	rm -f Slyph;
 	docker rmi $(docker images|grep slyph|awk '{print $1}') 

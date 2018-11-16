@@ -2,15 +2,17 @@ package models
 
 import (
 	"fmt"
-	"github.com/astaxie/beego/orm"
-	_ "github.com/go-sql-driver/mysql"
+	"os"
 	"sync"
 	"time"
+
+	"github.com/astaxie/beego/orm"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 func init() {
 	orm.RegisterDriver("mysql", orm.DRMySQL)
-	orm.RegisterDataBase("default", "mysql", "root:123456@tcp(123.207.136.18:3306)/k8s?charset=utf8")
+	orm.RegisterDataBase("default", "mysql", "root:123456@tcp("+os.Getenv("DB_HOST")+":3306)/k8s?charset=utf8")
 	orm.RegisterModel(new(Log))
 }
 

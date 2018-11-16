@@ -1,9 +1,11 @@
 # Slyph
-Slyph is a front system that helps you to use kubernetes and help you to learn kubernetes
+Slyph is a front system that helps you to use kubernetes and help you to learn kubernetes.
 
-You should set your kubernetes first and modify the .kube file make sure the the server is your kubernetes cluster's apiserveer
+You should install kompose first to support one key deploy feature.
 
-Dont forget to modify the login model for use
+You should set your kubernetes first and modify the .kube file make sure the the server is your kubernetes cluster's apiserveer.
+
+Dont forget to modify the login model for use.
 
 This system include method to operate POD[create,delete and check],Deployment[create,update,delete,rollback and check],Service[create,delete and check],
 Statefulset[create,delete and check],PV[create,delete and check]

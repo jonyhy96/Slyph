@@ -1,9 +1,10 @@
 package main
 
 import (
+	_ "Slyph/routers"
+
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
-	_ "k8s/routers"
 )
 
 func main() {

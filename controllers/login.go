@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
-	"k8s/models"
+	"Slyph/models"
 	"net"
 )
 

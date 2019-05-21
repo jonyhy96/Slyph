@@ -7,7 +7,7 @@ import (
 
 func init() {
 
-	beego.GlobalControllerRouter["k8s/controllers:AddStorage"] = append(beego.GlobalControllerRouter["k8s/controllers:AddStorage"],
+	beego.GlobalControllerRouter["Slyph/controllers:AddStorage"] = append(beego.GlobalControllerRouter["Slyph/controllers:AddStorage"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/create`,
@@ -15,7 +15,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:AddStorage"] = append(beego.GlobalControllerRouter["k8s/controllers:AddStorage"],
+	beego.GlobalControllerRouter["Slyph/controllers:AddStorage"] = append(beego.GlobalControllerRouter["Slyph/controllers:AddStorage"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/create`,
@@ -23,7 +23,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:AutoBuildController"] = append(beego.GlobalControllerRouter["k8s/controllers:AutoBuildController"],
+	beego.GlobalControllerRouter["Slyph/controllers:AutoBuildController"] = append(beego.GlobalControllerRouter["Slyph/controllers:AutoBuildController"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/up`,
@@ -31,7 +31,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:AutoBuildController"] = append(beego.GlobalControllerRouter["k8s/controllers:AutoBuildController"],
+	beego.GlobalControllerRouter["Slyph/controllers:AutoBuildController"] = append(beego.GlobalControllerRouter["Slyph/controllers:AutoBuildController"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/up`,
@@ -39,7 +39,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:AutoDownController"] = append(beego.GlobalControllerRouter["k8s/controllers:AutoDownController"],
+	beego.GlobalControllerRouter["Slyph/controllers:AutoDownController"] = append(beego.GlobalControllerRouter["Slyph/controllers:AutoDownController"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/down`,
@@ -47,7 +47,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:AutoDownController"] = append(beego.GlobalControllerRouter["k8s/controllers:AutoDownController"],
+	beego.GlobalControllerRouter["Slyph/controllers:AutoDownController"] = append(beego.GlobalControllerRouter["Slyph/controllers:AutoDownController"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/down`,
@@ -55,7 +55,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:CreateDeployment"] = append(beego.GlobalControllerRouter["k8s/controllers:CreateDeployment"],
+	beego.GlobalControllerRouter["Slyph/controllers:CreateDeployment"] = append(beego.GlobalControllerRouter["Slyph/controllers:CreateDeployment"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/create`,
@@ -63,7 +63,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:CreateDeployment"] = append(beego.GlobalControllerRouter["k8s/controllers:CreateDeployment"],
+	beego.GlobalControllerRouter["Slyph/controllers:CreateDeployment"] = append(beego.GlobalControllerRouter["Slyph/controllers:CreateDeployment"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/create`,
@@ -71,7 +71,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:CreatePod"] = append(beego.GlobalControllerRouter["k8s/controllers:CreatePod"],
+	beego.GlobalControllerRouter["Slyph/controllers:CreatePod"] = append(beego.GlobalControllerRouter["Slyph/controllers:CreatePod"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/create`,
@@ -79,7 +79,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:CreatePod"] = append(beego.GlobalControllerRouter["k8s/controllers:CreatePod"],
+	beego.GlobalControllerRouter["Slyph/controllers:CreatePod"] = append(beego.GlobalControllerRouter["Slyph/controllers:CreatePod"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/create`,
@@ -87,7 +87,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:CreateService"] = append(beego.GlobalControllerRouter["k8s/controllers:CreateService"],
+	beego.GlobalControllerRouter["Slyph/controllers:CreateService"] = append(beego.GlobalControllerRouter["Slyph/controllers:CreateService"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/create`,
@@ -95,7 +95,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:CreateService"] = append(beego.GlobalControllerRouter["k8s/controllers:CreateService"],
+	beego.GlobalControllerRouter["Slyph/controllers:CreateService"] = append(beego.GlobalControllerRouter["Slyph/controllers:CreateService"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/create`,
@@ -103,7 +103,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:CreateStatefulset"] = append(beego.GlobalControllerRouter["k8s/controllers:CreateStatefulset"],
+	beego.GlobalControllerRouter["Slyph/controllers:CreateStatefulset"] = append(beego.GlobalControllerRouter["Slyph/controllers:CreateStatefulset"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/create`,
@@ -111,7 +111,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:CreateStatefulset"] = append(beego.GlobalControllerRouter["k8s/controllers:CreateStatefulset"],
+	beego.GlobalControllerRouter["Slyph/controllers:CreateStatefulset"] = append(beego.GlobalControllerRouter["Slyph/controllers:CreateStatefulset"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/create`,
@@ -119,7 +119,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:DeleteDeployment"] = append(beego.GlobalControllerRouter["k8s/controllers:DeleteDeployment"],
+	beego.GlobalControllerRouter["Slyph/controllers:DeleteDeployment"] = append(beego.GlobalControllerRouter["Slyph/controllers:DeleteDeployment"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/delete`,
@@ -127,7 +127,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:DeletePod"] = append(beego.GlobalControllerRouter["k8s/controllers:DeletePod"],
+	beego.GlobalControllerRouter["Slyph/controllers:DeletePod"] = append(beego.GlobalControllerRouter["Slyph/controllers:DeletePod"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/delete`,
@@ -135,7 +135,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:DeleteService"] = append(beego.GlobalControllerRouter["k8s/controllers:DeleteService"],
+	beego.GlobalControllerRouter["Slyph/controllers:DeleteService"] = append(beego.GlobalControllerRouter["Slyph/controllers:DeleteService"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/delete`,
@@ -143,7 +143,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:DeleteStatefulset"] = append(beego.GlobalControllerRouter["k8s/controllers:DeleteStatefulset"],
+	beego.GlobalControllerRouter["Slyph/controllers:DeleteStatefulset"] = append(beego.GlobalControllerRouter["Slyph/controllers:DeleteStatefulset"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/delete`,
@@ -151,7 +151,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:DeleteStorage"] = append(beego.GlobalControllerRouter["k8s/controllers:DeleteStorage"],
+	beego.GlobalControllerRouter["Slyph/controllers:DeleteStorage"] = append(beego.GlobalControllerRouter["Slyph/controllers:DeleteStorage"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/delete`,
@@ -159,7 +159,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:GetDeployment"] = append(beego.GlobalControllerRouter["k8s/controllers:GetDeployment"],
+	beego.GlobalControllerRouter["Slyph/controllers:GetDeployment"] = append(beego.GlobalControllerRouter["Slyph/controllers:GetDeployment"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/getinfo`,
@@ -167,7 +167,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:GetDeployment"] = append(beego.GlobalControllerRouter["k8s/controllers:GetDeployment"],
+	beego.GlobalControllerRouter["Slyph/controllers:GetDeployment"] = append(beego.GlobalControllerRouter["Slyph/controllers:GetDeployment"],
 		beego.ControllerComments{
 			Method: "Getjson",
 			Router: `/getjson`,
@@ -175,7 +175,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:GetPod"] = append(beego.GlobalControllerRouter["k8s/controllers:GetPod"],
+	beego.GlobalControllerRouter["Slyph/controllers:GetPod"] = append(beego.GlobalControllerRouter["Slyph/controllers:GetPod"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/getinfo`,
@@ -183,7 +183,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:GetPod"] = append(beego.GlobalControllerRouter["k8s/controllers:GetPod"],
+	beego.GlobalControllerRouter["Slyph/controllers:GetPod"] = append(beego.GlobalControllerRouter["Slyph/controllers:GetPod"],
 		beego.ControllerComments{
 			Method: "Getjson",
 			Router: `/getjson`,
@@ -191,7 +191,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:GetService"] = append(beego.GlobalControllerRouter["k8s/controllers:GetService"],
+	beego.GlobalControllerRouter["Slyph/controllers:GetService"] = append(beego.GlobalControllerRouter["Slyph/controllers:GetService"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/getinfo`,
@@ -199,7 +199,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:GetService"] = append(beego.GlobalControllerRouter["k8s/controllers:GetService"],
+	beego.GlobalControllerRouter["Slyph/controllers:GetService"] = append(beego.GlobalControllerRouter["Slyph/controllers:GetService"],
 		beego.ControllerComments{
 			Method: "Getjson",
 			Router: `/getjson`,
@@ -207,7 +207,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:GetStatefulset"] = append(beego.GlobalControllerRouter["k8s/controllers:GetStatefulset"],
+	beego.GlobalControllerRouter["Slyph/controllers:GetStatefulset"] = append(beego.GlobalControllerRouter["Slyph/controllers:GetStatefulset"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/getinfo`,
@@ -215,7 +215,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:GetStatefulset"] = append(beego.GlobalControllerRouter["k8s/controllers:GetStatefulset"],
+	beego.GlobalControllerRouter["Slyph/controllers:GetStatefulset"] = append(beego.GlobalControllerRouter["Slyph/controllers:GetStatefulset"],
 		beego.ControllerComments{
 			Method: "Getjson",
 			Router: `/getjson`,
@@ -223,7 +223,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:GetStorage"] = append(beego.GlobalControllerRouter["k8s/controllers:GetStorage"],
+	beego.GlobalControllerRouter["Slyph/controllers:GetStorage"] = append(beego.GlobalControllerRouter["Slyph/controllers:GetStorage"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/getinfo`,
@@ -231,7 +231,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:GetStorage"] = append(beego.GlobalControllerRouter["k8s/controllers:GetStorage"],
+	beego.GlobalControllerRouter["Slyph/controllers:GetStorage"] = append(beego.GlobalControllerRouter["Slyph/controllers:GetStorage"],
 		beego.ControllerComments{
 			Method: "Getjson",
 			Router: `/getjson`,
@@ -239,7 +239,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:IndexController"] = append(beego.GlobalControllerRouter["k8s/controllers:IndexController"],
+	beego.GlobalControllerRouter["Slyph/controllers:IndexController"] = append(beego.GlobalControllerRouter["Slyph/controllers:IndexController"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/`,
@@ -247,7 +247,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:LogController"] = append(beego.GlobalControllerRouter["k8s/controllers:LogController"],
+	beego.GlobalControllerRouter["Slyph/controllers:LogController"] = append(beego.GlobalControllerRouter["Slyph/controllers:LogController"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/`,
@@ -255,7 +255,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:LogController"] = append(beego.GlobalControllerRouter["k8s/controllers:LogController"],
+	beego.GlobalControllerRouter["Slyph/controllers:LogController"] = append(beego.GlobalControllerRouter["Slyph/controllers:LogController"],
 		beego.ControllerComments{
 			Method: "Getlog",
 			Router: `/log`,
@@ -263,7 +263,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:LoginController"] = append(beego.GlobalControllerRouter["k8s/controllers:LoginController"],
+	beego.GlobalControllerRouter["Slyph/controllers:LoginController"] = append(beego.GlobalControllerRouter["Slyph/controllers:LoginController"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/login`,
@@ -271,7 +271,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:LoginController"] = append(beego.GlobalControllerRouter["k8s/controllers:LoginController"],
+	beego.GlobalControllerRouter["Slyph/controllers:LoginController"] = append(beego.GlobalControllerRouter["Slyph/controllers:LoginController"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/login`,
@@ -279,7 +279,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:RollBackDeployment"] = append(beego.GlobalControllerRouter["k8s/controllers:RollBackDeployment"],
+	beego.GlobalControllerRouter["Slyph/controllers:RollBackDeployment"] = append(beego.GlobalControllerRouter["Slyph/controllers:RollBackDeployment"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/rollback`,
@@ -287,7 +287,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:UpdateDeployment"] = append(beego.GlobalControllerRouter["k8s/controllers:UpdateDeployment"],
+	beego.GlobalControllerRouter["Slyph/controllers:UpdateDeployment"] = append(beego.GlobalControllerRouter["Slyph/controllers:UpdateDeployment"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/update`,
@@ -295,7 +295,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["k8s/controllers:UpdateDeployment"] = append(beego.GlobalControllerRouter["k8s/controllers:UpdateDeployment"],
+	beego.GlobalControllerRouter["Slyph/controllers:UpdateDeployment"] = append(beego.GlobalControllerRouter["Slyph/controllers:UpdateDeployment"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/update`,

@@ -3,12 +3,13 @@ package models
 import (
 	"database/sql"
 	"fmt"
+
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/golang/glog"
 )
 
 func LinkTomysql() (*sql.DB, error) {
-	db, err := sql.Open("mysql", "root:password@tcp(host)/k8s?charset=utf8")
+	db, err := sql.Open("mysql", "root:123456@tcp(localhost)/k8s?charset=utf8")
 	if err != nil {
 		fmt.Println(err)
 		fmt.Println("连接服务器失败")

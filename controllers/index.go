@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"k8s/models"
+	"Slyph/models"
 )
 
 // IndexController struct

@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"io"
-	"k8s/models"
+	"Slyph/models"
 	"os"
 	"os/exec"
 )

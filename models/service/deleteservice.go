@@ -4,7 +4,7 @@ import (
 	// "k8s.io/api/apps/v1beta2"
 	apiv1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s/models"
+	"Slyph/models"
 	"net/http"
 )
 

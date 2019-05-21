@@ -1,20 +1,32 @@
-version: "3"
+version: '3.5'
+
+networks:
+  base:
+    name: base
+
 services:
-
-  web:
-   image: tuna/docker-counter23
-   ports:
-    - "5000:5000"
-   deploy:
-    replicas: 1
-    restart_policy:
-      condition: any
-   labels:
-    kompose.service.type: NodePort
-
-  redis:
-   image: redis:3.0
-   ports:
-    - "6379"
-   labels:
-    kompose.service.type: NodePort
+  slyph:
+    build:
+      context: .
+    image: slyph
+    container_name: slyph
+    environment:
+      APP_PORT: 8888
+    ports:
+      - 8888:8888
+    depends_on:
+      - db
+    networks:
+      - base      
+  db:
+    build:
+      context: ./db
+    image: slyph-db
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    ports:
+      - 3306:3306
+    networks:
+      - base

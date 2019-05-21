@@ -13,7 +13,7 @@ var once sync.Once
 
 func GetClientset() *kubernetes.Clientset {
 	once.Do(func() {
-		kubeconfig := flag.String("kubeconfig", "/go/src/.kube/config", "absolute path to the kubeconfig file")
+		kubeconfig := flag.String("kubeconfig", "/.kube/config", "absolute path to the kubeconfig file")
 		flag.Parse()
 		// uses the current context in kubeconfig
 		config, err := clientcmd.BuildConfigFromFlags(clientcmd.ClusterDefaults.Server, *kubeconfig)

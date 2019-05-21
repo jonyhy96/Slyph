@@ -2,7 +2,7 @@ package routers
 
 import (
 	"github.com/astaxie/beego"
-	"k8s/controllers"
+	"Slyph/controllers"
 )
 
 // @APIVersion 1.0.0

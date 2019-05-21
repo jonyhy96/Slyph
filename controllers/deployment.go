@@ -3,8 +3,8 @@ package controllers
 import (
 	"encoding/json"
 	"github.com/golang/glog"
-	"k8s/models"
-	"k8s/models/deployment"
+	"Slyph/models"
+	"Slyph/models/deployment"
 )
 
 // CreateDeployment struct

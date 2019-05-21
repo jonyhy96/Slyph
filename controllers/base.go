@@ -3,7 +3,7 @@ package controllers
 import (
 	"github.com/astaxie/beego"
 	"github.com/golang/glog"
-	"k8s/models"
+	"Slyph/models"
 	"net/http"
 	"runtime/debug"
 )

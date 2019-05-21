@@ -3,7 +3,7 @@ package controllers
 import (
 	"encoding/json"
 	"github.com/golang/glog"
-	"k8s/models"
+	"Slyph/models"
 )
 
 // AddStorage struct
